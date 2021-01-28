@@ -1,0 +1,11 @@
+let a = [];
+a[0] = 26;
+a[1] = "Oleksiy";
+a[2] = true;
+a[3] = null;
+document.write(a.length);
+let question = prompt("Your value?");
+a[4] = question;
+document.write(a[4]);
+a.shift;
+document.write(a);
