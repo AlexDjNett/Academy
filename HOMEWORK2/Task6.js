@@ -22,5 +22,8 @@ let semiPerimeter = (sideA + sideB + sideC) * 0.5;
 let square = Math.sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
 console.log(square.toFixed(3));
 
-
-
+if (sideA == sideB && sideB == sideC) {
+  console.log("This triangle equal!");
+} else {
+  console.log("This don't triangle equal!");
+}

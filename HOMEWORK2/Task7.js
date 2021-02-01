@@ -22,6 +22,6 @@ if (hours >= 23 && hours < 5) {
 (hours >= 11 && hours < 17) ? document.write("Good day!") :
 (hours >= 17 && hours < 23) ? document.write("Good evening") :
 document.write("Error");
-  
+
 
 
