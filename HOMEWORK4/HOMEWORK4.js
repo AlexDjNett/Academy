@@ -44,9 +44,41 @@ try {
 
 //Task 3
 
-/*
-Run code
-*/
+class MonthException extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "MonthException";
+  }
+}
+
+function showMonthName(month) {
+  let months = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December"
+  };
+
+  if (month > 13) {
+    throw new MonthException("Incorrect month number");
+  } else {
+    return months[month];
+  }
+}
+
+try {
+  console.log(showMonthName(4));
+} catch (e) {
+  console.log(e.name + ' ' + e.message);
+}
 
 //Task 4
 
