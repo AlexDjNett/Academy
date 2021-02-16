@@ -101,7 +101,7 @@ const EL2 = document.getElementById("city");
 const elemP = document.getElementsByTagName("p");
 
 window.onload = selectCities;
-country.onchange = selectCities;
+EL2.onchange = selectCities;
 
 function selectCities(){
   EL2.innerHTML = "";
