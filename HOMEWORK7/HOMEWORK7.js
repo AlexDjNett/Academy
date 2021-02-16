@@ -90,43 +90,47 @@ window.addEventListener("resize", function() {
 
 //Task 7
 
-var cities = {
+let cities = {
   ger: ["Berlin", "Gamburg", "Essen", "Bremen"],
   usa: ["NewYork", "Boston", "Chikago", "Washington"],
   ukr: ["Dnipro", "Lviv", "Rivne", "Kharkiv"] 
 };
-var country = document.getElementById("country");
-var city = document.querySelector("#city");
 
-window.onload = selectCountry;
-country.onchange = selectCountry;
+const EL1 = document.getElementById("country");
+const EL2 = document.getElementById("city");
+const elemP = document.getElementsByTagName("p");
 
-function selectCountry(){
-  city.innerHTML = "";
-  let c = this.value || "ger", o;
-  for(let i = 0; i < cities[c].length; i++){
-    o = new Option(cities[c][i],i,false,false);
-    city.add(o);
+window.onload = selectCities;
+country.onchange = selectCities;
+
+function selectCities(){
+  EL2.innerHTML = "";
+  let firsValue = this.value || "ger", res;
+  
+  for (let i = 0; i < cities[firsValue].length; i++){
+  res = new Option(cities[firsValue][i],i,false,false);
+  EL2.add(res);
   };
 
+let index = city.selectedIndex;
+let date = city.options[index].text;
+elemP[1].innerText = date;
 }
+
+let index = country.selectedIndex;
+let date = country.options[index].text;
+elemP[0].innerText = date;
+
 document.addEventListener('DOMContentLoaded', () => {
-  const EL1 = document.getElementById("country");
-  const EL2 = document.getElementById("city");
-  if (!!EL1) {
-      EL1.addEventListener("change", e => {
-        let index = document.getElementById("country").selectedIndex;
-        let date = document.getElementById("country").options[index].text;
-        let elemP = document.getElementsByTagName("p");
-        let a = elemP[0].innerHTML = date;
-      });
-  }
-  if (!!EL2) {
-          EL2.addEventListener("change", e => {
-            let index = document.getElementById("city").selectedIndex;
-            let date = document.getElementById("city").options[index].text;
-            let elemP = document.getElementsByTagName("p");
-            let a = elemP[0].innerHTML = date;
-          });
-      }
+  EL1.addEventListener("change", e => {
+    let index =EL1.selectedIndex;
+    let date = EL1.options[index].text;
+    elemP[0].innerText = date;
+  });
+
+  EL2.addEventListener("change", e => {
+    let index = EL2.selectedIndex;
+    let date = EL2.options[index].text;
+    elemP[1].innerText = date;
+  });
 });
