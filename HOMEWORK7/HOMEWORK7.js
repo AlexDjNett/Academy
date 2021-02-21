@@ -90,6 +90,7 @@ window.addEventListener("resize", function() {
 
 //Task 7
 
+
 let cities = {
   ger: ["Berlin", "Gamburg", "Essen", "Bremen"],
   usa: ["NewYork", "Boston", "Chikago", "Washington"],
@@ -101,7 +102,7 @@ const EL2 = document.getElementById("city");
 const elemP = document.getElementsByTagName("p");
 
 window.onload = selectCities;
-EL2.onchange = selectCities;
+EL1.onchange = selectCities;
 
 function selectCities(){
   EL2.innerHTML = "";
@@ -123,7 +124,7 @@ elemP[0].innerText = date;
 
 document.addEventListener('DOMContentLoaded', () => {
   EL1.addEventListener("change", e => {
-    let index =EL1.selectedIndex;
+    let index = EL1.selectedIndex;
     let date = EL1.options[index].text;
     elemP[0].innerText = date;
   });
@@ -131,6 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
   EL2.addEventListener("change", e => {
     let index = EL2.selectedIndex;
     let date = EL2.options[index].text;
-    elemP[1].innerText = date;
+    elemP[0].innerText += `,${date}`;
   });
 });
