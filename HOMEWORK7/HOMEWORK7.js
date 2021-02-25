@@ -98,8 +98,11 @@ let cities = {
 };
 
 const EL1 = document.getElementById("country");
+EL1.addEventListener('change', selectCities);
+EL1.addEventListener('change', Paragraph);
+
 const EL2 = document.getElementById("city");
-const elemP = document.getElementsByTagName("p");
+EL2.addEventListener("change", Paragraph);
 
 window.onload = selectCities;
 EL1.onchange = selectCities;
@@ -107,31 +110,19 @@ EL1.onchange = selectCities;
 function selectCities(){
   EL2.innerHTML = "";
   let firsValue = this.value || "ger", res;
+  let select_country = EL1.value;
   
   for (let i = 0; i < cities[firsValue].length; i++){
-  res = new Option(cities[firsValue][i],i,false,false);
-  EL2.add(res);
+    let new_opinion = document.createElement('option');
+    new_opinion.innerHTML = cities[select_country][i];
+    EL2.appendChild(new_opinion);
   };
-
-let index = city.selectedIndex;
-let date = city.options[index].text;
-elemP[1].innerText = date;
 }
 
-let index = country.selectedIndex;
-let date = country.options[index].text;
-elemP[0].innerText = date;
+let parag = document.querySelector("p");
 
-document.addEventListener('DOMContentLoaded', () => {
-  EL1.addEventListener("change", e => {
-    let index = EL1.selectedIndex;
-    let date = EL1.options[index].text;
-    elemP[0].innerText = date;
-  });
-
-  EL2.addEventListener("change", e => {
-    let index = EL2.selectedIndex;
-    let date = EL2.options[index].text;
-    elemP[0].innerText += `,${date}`;
-  });
-});
+function toParagraf () {
+  parag.innerHTML = ""; 
+  parag.innerHTML = EL1.options[EL1.selectedIndex].text + ',' + 
+  EL2.options[EL2.selectedIndex].text;
+}
