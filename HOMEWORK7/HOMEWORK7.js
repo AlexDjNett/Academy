@@ -121,7 +121,7 @@ function selectCities(){
 
 let parag = document.querySelector("p");
 
-function toParagraf () {
+function Paragraph () {
   parag.innerHTML = ""; 
   parag.innerHTML = EL1.options[EL1.selectedIndex].text + ',' + 
   EL2.options[EL2.selectedIndex].text;

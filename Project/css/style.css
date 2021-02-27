@@ -1,0 +1,24 @@
+.wrapper_informations {
+  display: flex;
+  justify-content: space-around;
+}
+
+.information {
+
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+
+.wrapper_smart_modules {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.smart_modul {
+  
+  width: 200px;
+  height: 200px;
+  background: black;
+}

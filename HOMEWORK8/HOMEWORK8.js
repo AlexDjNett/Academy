@@ -19,7 +19,7 @@ function checkEmail (str) {
   console.log(res);
 }
 
-checkEmail('Qmail2@gmail.com');
+checkEmail('Qmai545l2@gmail.com');
 
 //Task 3
 
