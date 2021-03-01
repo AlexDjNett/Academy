@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/Project/css/style.css">
-  <link rel="stylesheet" href="/Project/css/bootstrap-reboot.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-  <div class="wrapper_informations">
-    <div class="information" id="info_1"></div>
-    <div class="information" id="info_2"></div>
-    <div class="information" id="info_3"></div>
-  </div>
-  <div class="wrapper_smart_modules">
-    <div class="smart_modul" id="modul_1"></div>
-    <div class="smart_modul" id="modul_1"></div>
-    <div class="smart_modul" id="modul_1"></div>
-  </div>
-</body>
-<script src="/Project/js/smartHome.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/Project/css/style.css" />
+    <!-- <link rel="stylesheet" href="/Project/css/bootstrap-reboot.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!--  Кнопки на добавление, удаление, расширение -->
+    <div class="wrapper_btn">
+      <form name="myForm" class="form" size="1">
+        <select name="device"></select>
+        <p>
+          <input type="text" name="textInput" placeholder="Введите текст" />
+        </p>
+        <p>
+          <input type="button" id="addButton" value="Добавить" />
+          <input type="button" id="removeButton" value="Удалить" />
+        </p>
+      </form>
+    </div>
+
+    <!--  Состояние элемента -->
+
+    <div class="wrapper_smart_modules">
+      <div class="smart_modul" id="light">
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <div class="text">
+          <div class="title">
+            <p id="elem"></p>
+          </div>
+          <div class="discriptions">
+            <p id="elemValue"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/Project/js/smartHome.js"></script>
 </html>
