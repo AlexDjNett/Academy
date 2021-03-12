@@ -7,7 +7,7 @@
 .smart_modul {
   width: 200px;
   height: 200px;
-  background: red;
+  background: blue;
 }
 
 .wrapper_btn {
@@ -16,7 +16,8 @@
 
 .form {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 .switch {
@@ -87,4 +88,8 @@ button.new {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #666;
+}
+
+#elem {
+  text-align: center;
 }

@@ -18,30 +18,19 @@
           <input type="text" name="textInput" placeholder="Введите текст" />
         </p>
         <p>
-          <input type="button" id="addButton" value="Добавить" />
+          <input
+            type="button"
+            id="addButton"
+            value="Добавить элемент SMART HOME"
+          />
           <input type="button" id="removeButton" value="Удалить" />
         </p>
       </form>
     </div>
+    <p id="elem"></p>
 
     <!--  Состояние элемента -->
-
-    <div class="wrapper_smart_modules">
-      <div class="smart_modul" id="light">
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <div class="text">
-          <div class="title">
-            <p id="elem"></p>
-          </div>
-          <div class="discriptions">
-            <p id="elemValue"></p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="wrapper_smart_modules"></div>
   </body>
   <script src="/Project/js/smartHome.js"></script>
 </html>
