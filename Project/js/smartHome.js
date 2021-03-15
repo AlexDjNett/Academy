@@ -19,15 +19,15 @@ function addOption(){
   //добавляем панель управления к каждому элементу
   const div = document.createElement("div");
   div.setAttribute("class", "smart_modul");
+  div.setAttribute("id", selectedOption.text);
   div.innerHTML += `
-           
-        <label class="switch" id="${text}">
+        <label class="switch">
           <input type="checkbox" class="check_box" onchange="changeState()"/>
           <span class="slider round"></span>
         </label>
         <div class="text">
           <div class="title">
-            <p id="elem">${text}</p>
+            <p>${text}</p>
           </div>
           <div class="discriptions">
             <p id="elemValue"></p>
@@ -42,7 +42,7 @@ function addOption(){
 
     let content = document.getElementsByClassName("check_box");
     let smartMod = document.getElementsByClassName("smart_modul");
-    console.log(smartMod);
+    
     for (let i = 0; i < smartMod.length; i++) {
 	if (content[i].checked) {
 		smartMod[i].setAttribute('style', "background-color: green");
@@ -61,24 +61,24 @@ function removeOption(){
   deviceSelect.remove(selectedIndex);
   const selection = document.getElementById("elem");
   // Удаляем элемент в строке информации
-  selection.innerHTML = "";
-
-  // Удаляем блок элемента который выбрали
-  const wrapperModule = document.getElementsByClassName("wrapper_smart_modules");
-  const smartMod = document.getElementsByClassName("smart_modul");
-  console.log(wrapperModule);
-  console.log(smartMod);
-
-   
-  // if (selectedIndex) {
-  //   wrapperModule.remove(smartMod);
-  // } else {}
+  selection.innerHTML = ""; 
 }
- 
+
+// Удаляем блок элемента который выбрали
+function removeDiv() {
+
+  const select = document.getElementById("device");
+  let value = select.value;
+  let removeDiv = document.getElementById(value);
+  console.log(value);
+  
+}
+
 addButton.addEventListener("click", addOption);
 removeButton.addEventListener("click", removeOption);
+removeButton.addEventListener("click", removeDiv);
 
-  //Изменяем елемент в строке информации
+//Изменяем елемент в строке информации
 const devicesSelect = myForm.device;
 
 function changeOption() {
